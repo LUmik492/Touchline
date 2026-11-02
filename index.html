@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101915">
+  <title>Touchline — Piłka nożna z każdej strony</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">T</span><span>TOUCHLINE</span></a>
+  <nav id="mainNav"><a class="active" href="#home">Strona główna</a><a href="#news">Aktualności</a><a href="#analysis">Analizy</a><a href="#about">O nas</a></nav>
+  <button class="admin-open" id="adminOpen">Panel redakcyjny ↗</button>
+  <button class="menu-toggle" id="menuToggle" aria-label="Otwórz menu">☰</button>
+</header>
+
+<main id="home">
+  <section class="hero-wrap">
+    <div class="eyebrow"><span class="live-dot"></span> MAGAZYN PIŁKARSKI <span class="eyebrow-line"></span> WYDANIE 01</div>
+    <div class="hero-grid">
+      <article class="hero-main">
+        <div class="hero-image">
+          <div class="image-label">ŚWIAT FUTBOLU</div>
+          <div class="hero-image-caption">FOOTBALL<br><em>NEVER STOPS.</em></div>
+        </div>
+        <div class="hero-copy">
+          <div class="meta"><span class="tag">OD REDAKCJI</span><span>•</span><span>Touchline</span><span>•</span><span>3 min czytania</span></div>
+          <h1>Piłka nożna to coś więcej niż <em>wynik.</em></h1>
+          <p>Historie, które stoją za meczami. Ludzie, emocje, taktyka i decyzje zmieniające oblicze futbolu.</p>
+          <a class="text-link" href="#about">Poznaj Touchline <span>↗</span></a>
+        </div>
+      </article>
+      <aside class="hero-side">
+        <div class="side-heading"><span>W REDAKCJI</span><span class="small-line"></span></div>
+        <div class="side-story"><span class="side-number">01</span><div><span class="muted">KIERUNEK</span><h3>Futbol bez skrótów i powierzchownych ocen.</h3><p>Przyglądamy się temu, co dzieje się na boisku i poza nim.</p></div></div>
+        <div class="side-story"><span class="side-number">02</span><div><span class="muted">PERSPEKTYWA</span><h3>Od wielkich lig po historie, które umykają uwadze.</h3><p>Premier League, europejskie puchary i reszta piłkarskiego świata.</p></div></div>
+        <div class="side-story"><span class="side-number">03</span><div><span class="muted">NASZA ZASADA</span><h3>Najpierw jakość. Potem liczba publikacji.</h3><p>Autorskie teksty, przemyślane opinie i konkretne argumenty.</p></div></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="news">
+    <div class="section-top"><div><div class="kicker">NAJNOWSZE PUBLIKACJE</div><h2>Głos <em>boiska.</em></h2></div><span class="section-note">AUTORSKIE ARTYKUŁY / TOUCHLINE</span></div>
+    
+<div class="article-tools">
+  <div class="search-box">
+    <span>⌕</span>
+    <input
+      type="search"
+      id="articleSearch"
+      placeholder="Szukaj artykułów..."
+      aria-label="Szukaj artykułów"
+    >
+  </div>
+
+  <div class="filters" id="filters">
+    <button class="filter active" data-filter="Wszystkie">Wszystkie</button>
+    <button class="filter" data-filter="Analiza">Analizy</button>
+    <button class="filter" data-filter="Opinie">Opinie</button>
+    <button class="filter" data-filter="Transfery">Transfery</button>
+    <button class="filter" data-filter="Premier League">Premier League</button>
+    <button class="filter" data-filter="La Liga">La Liga</button>
+    <button class="filter" data-filter="Bundesliga">Bundesliga</button>
+    <button class="filter" data-filter="Serie A">Serie A</button>
+    <button class="filter" data-filter="Ligue 1">Ligue 1</button>
+    <button class="filter" data-filter="Liga Mistrzów">Liga Mistrzów</button>
+  </div>
+</div>
+
+    </div>
+    <div class="article-grid" id="articleGrid"></div>
+  </section>
+
+  <section class="analysis-band" id="analysis">
+    <div class="analysis-inner">
+      <div><div class="kicker light">WIĘCEJ NIŻ RELACJA</div><h2>Futbol warto<br><em>czytać głębiej.</em></h2></div>
+      <p>Nie chcemy tylko opowiadać, kto wygrał. Chcemy rozumieć dlaczego. Taktyka, decyzje trenerów, profile zawodników i kontekst, który zmienia odbiór meczu.</p>
+      <a href="#news" class="circle-arrow">↘</a>
+    </div>
+  </section>
+
+  <section class="about section" id="about">
+    <div class="about-mark">T.</div>
+    <div><div class="kicker">O TOUCHLINE</div><h2>Piłka nożna.<br><em>Bez filtra.</em></h2><p>Touchline to niezależny projekt redakcyjny tworzony z pasji do futbolu. Stawiamy na autorskie artykuły, rzetelne spojrzenie i szacunek do czytelnika. To początek naszej drogi.</p></div>
+  </section>
+</main>
+
+<footer><a class="brand" href="#"><span class="brand-mark">T</span><span>TOUCHLINE</span></a><span>© 2026 TOUCHLINE. WSZYSTKIE PRAWA ZASTRZEŻONE.</span><a href="#home">DO GÓRY ↑</a></footer>
+
+<div class="modal-backdrop" id="adminModal" aria-hidden="true">
+  <section class="admin-panel">
+    <div class="admin-head"><div><div class="kicker">ZARZĄDZANIE TREŚCIĄ</div><h2>Panel <em>redakcyjny.</em></h2></div><button class="close-modal" id="closeAdmin" aria-label="Zamknij">×</button></div>
+    <p class="admin-warning">Wersja demonstracyjna: artykuły są zapisywane lokalnie w tej przeglądarce. To nie jest jeszcze bezpieczny panel z kontem użytkownika ani bazą online.</p>
+    <form id="articleForm">
+      <label>Tytuł artykułu<input id="articleTitle" required maxlength="100" placeholder="Wpisz tytuł"></label>
+      <div class="form-row"><label>Kategoria<select id="articleCategory"><option>Analiza</option><option>Opinie</option><option>Premier League</option><option>Transfery</option></select></label><label>Czas czytania<select id="articleRead"><option>3 min</option><option>5 min</option><option>7 min</option><option>10 min</option></select></label></div>
+      <label>Krótki opis<textarea id="articleExcerpt" required maxlength="220" rows="3" placeholder="Zajawka widoczna na stronie"></textarea></label>
+      <label>Treść artykułu<textarea id="articleBody" required rows="7" placeholder="Napisz własny artykuł..."></textarea></label>
+      <label>Adres zdjęcia (opcjonalnie)<input id="articleImage" type="url" placeholder="https://..."></label>
+      <button class="publish-button" type="submit">Opublikuj artykuł ↗</button>
+    </form>
+    <div class="admin-list"><h3>Twoje publikacje</h3><div id="adminArticles"></div></div>
+  </section>
+</div>
+<
+<div class="reader-backdrop" id="readerModal" aria-hidden="true">
+  <article class="reader">
+    <button class="close-modal" id="closeReader">×</button>
+
+    <div class="reader-hero">
+  <div class="reader-hero-content">
+      <div class="kicker" id="readerCategory"></div>
+      <h2 id="readerTitle"></h2>
+      <div class="reader-meta" id="readerMeta"></div>
+    </div>
+
+    <p class="reader-excerpt" id="readerExcerpt"></p>
+
+    <div class="reader-body" id="readerBody"></div>
+  </article>
+</div>
+<div class="reader-backdrop" id="readerModal" aria-hidden="true"><article class="reader"><button class="close-modal" id="closeReader">×</button><div class="kicker" id="readerCategory"></div><h2 id="readerTitle"></h2><div class="reader-meta" id="readerMeta"></div><p class="reader-excerpt" id="readerExcerpt"></p><div class="reader-body" id="readerBody"></div></article></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script src="app.js"></script>
+</body></html>

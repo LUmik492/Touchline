@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel administratora | Touchline</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body {
+      min-height: 100vh;
+      background: #07120a;
+      color: #f3f5ed;
+    }
+
+    .admin-page {
+      width: min(1050px, 92%);
+      margin: 55px auto;
+    }
+
+    .admin-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 35px;
+    }
+
+    .admin-heading h1 {
+      font-size: clamp(28px, 5vw, 42px);
+    }
+
+    .admin-heading span {
+      color: #b6ed45;
+    }
+
+    .admin-box {
+      background: #101c13;
+      border: 1px solid #293a2b;
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 25px;
+    }
+
+    .admin-box h2 {
+      margin-bottom: 22px;
+      font-size: 22px;
+    }
+
+    .admin-form {
+      display: grid;
+      gap: 15px;
+    }
+
+    .admin-form label {
+      display: grid;
+      gap: 7px;
+      color: #b8c3b7;
+      font-size: 14px;
+    }
+
+    .admin-form input,
+    .admin-form textarea,
+    .admin-form select {
+      width: 100%;
+      padding: 13px;
+      border-radius: 7px;
+      border: 1px solid #354738;
+      background: #09130c;
+      color: white;
+      font: inherit;
+    }
+
+    .admin-form textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .admin-form input:focus,
+    .admin-form textarea:focus,
+    .admin-form select:focus {
+      outline: 1px solid #b6ed45;
+    }
+
+    .admin-button {
+      border: 0;
+      border-radius: 7px;
+      padding: 13px 20px;
+      background: #b6ed45;
+      color: #10180b;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .admin-button:hover {
+      background: #c8ff5b;
+    }
+
+    .secondary-button {
+      background: transparent;
+      border: 1px solid #52634f;
+      color: white;
+    }
+
+    .danger-button {
+      background: #6b2929;
+      color: white;
+    }
+
+    .admin-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .admin-article {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      padding: 17px 0;
+      border-bottom: 1px solid #293a2b;
+    }
+
+    .admin-article:last-child {
+      border-bottom: 0;
+    }
+
+    .admin-article p {
+      color: #aeb9ac;
+      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    .admin-message {
+      color: #b6ed45;
+      margin-top: 15px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .admin-back {
+      color: #b6ed45;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .admin-page {
+        margin: 30px auto;
+      }
+
+      .admin-box {
+        padding: 19px;
+      }
+
+      .admin-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .admin-article {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="admin-page">
+
+    <div class="admin-heading">
+      <div>
+        <a href="index.html" class="admin-back">← Wróć do Touchline</a>
+        <h1>TOUCHLINE <span>ADMIN</span></h1>
+        <p>Panel zarządzania redakcją</p>
+      </div>
+    </div>
+
+    <!-- LOGOWANIE -->
+
+    <section class="admin-box" id="loginSection">
+      <h2>Logowanie administratora</h2>
+
+      <form class="admin-form" id="loginForm">
+        <label>
+          Adres e-mail
+          <input type="email" id="loginEmail" required>
+        </label>
+
+        <label>
+          Hasło
+          <input type="password" id="loginPassword" required>
+        </label>
+
+        <button class="admin-button" type="submit">
+          Zaloguj się
+        </button>
+      </form>
+
+      <p class="admin-message" id="loginMessage"></p>
+    </section>
+
+    <!-- PANEL ADMINISTRATORA -->
+
+    <section id="dashboardSection" class="hidden">
+
+      <div class="admin-box">
+        <div class="admin-heading">
+          <div>
+            <h2>Panel redakcyjny</h2>
+            <p id="adminEmail"></p>
+          </div>
+
+          <button class="admin-button secondary-button" id="logoutButton">
+            Wyloguj się
+          </button>
+        </div>
+      </div>
+
+      <div class="admin-box">
+        <h2 id="formHeading">Dodaj nowy artykuł</h2>
+
+        <form class="admin-form" id="articleForm">
+
+          <input type="hidden" id="articleId">
+
+          <label>
+            Tytuł artykułu
+            <input type="text" id="articleTitle" required>
+          </label>
+
+          <label>
+            Kategoria
+           
+<select id="articleCategory">
+  <option value="Analiza">Analiza</option>
+  <option value="Opinie">Opinie</option>
+  <option value="Transfery">Transfery</option>
+  <option value="Premier League">Premier League</option>
+  <option value="La Liga">La Liga</option>
+  <option value="Bundesliga">Bundesliga</option>
+  <option value="Serie A">Serie A</option>
+  <option value="Ligue 1">Ligue 1</option>
+  <option value="Liga Mistrzów">Liga Mistrzów</option>
+</select>
+
+          </label>
+
+          <label>
+            Czas czytania
+            <input type="text" id="articleRead" value="3 min">
+          </label>
+
+          <label>
+            Krótki opis
+            <textarea id="articleExcerpt" required></textarea>
+          </label>
+
+          <label>
+            Treść artykułu
+            <textarea id="articleBody" required></textarea>
+          </label>
+
+          <label>
+            Adres zdjęcia (URL)
+            <input type="url" id="articleImage">
+          </label>
+
+          <label>
+            <input type="checkbox" id="articlePublished" checked>
+            Opublikuj artykuł od razu
+          </label>
+
+          <div class="admin-actions">
+            <button class="admin-button" type="submit" id="saveArticleButton">
+              Opublikuj artykuł
+            </button>
+
+            <button class="admin-button secondary-button hidden" type="button" id="cancelEditButton">
+              Anuluj edycję
+            </button>
+          </div>
+
+          <p class="admin-message" id="articleMessage"></p>
+        </form>
+      </div>
+
+      <div class="admin-box">
+        <h2>Artykuły w bazie</h2>
+        <div id="adminArticles">
+          Ładowanie artykułów...
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="admin.js"></script>
+
+</body>
+</html>
